@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="title" content="Happy Birthday" />
-        <meta name="github" content="https://github.com/Aoudumber-Bade" />
+        <meta name="github" content="https://github.com/4RN4B" />
         <title>Chukiii Birthday</title>
         <link rel="stylesheet" href="style.css" />
         <link
@@ -26,6 +26,13 @@
     </head>
 
     <body>
+        <div id="modal">
+            <h1>Welcome!</h1>
+            <p>Click to start music🎶✨</p>
+            <button id="startBtn" onclick="playMusic()">
+                Play Music & Start
+            </button>
+        </div>
         <audio id="bg-music" autoplay loop style="display: none">
             <source src="music.mp3" type="audio/mp3" />
             Your browser does not support the audio element.
@@ -73,16 +80,11 @@
                         <span></span>
                     </div>
                     <div class="btn">
-                        <button id="btn__letter" onclick="playMusic()">
+                        <button id="btn__letter">
                             <div class="mail">
                                 Click Here Chutki
                                 <i class="fa-regular fa-envelope"></i>
                             </div>
-                        </button>
-                    </div>
-                    <div class="btn">
-                        <button id="btn__letter">
-                            <div class="mail">Play Music</div>
                         </button>
                     </div>
                 </div>
@@ -235,8 +237,8 @@
                                 </p>
                                 <p>
                                     So Happy Birthday, Chutki — keep shining,
-                                    keep laughing, aro boro hobe dream-er road
-                                    eee 🎂🤪✨
+                                    keep laughing, aro boro হয় dream-er road eee
+                                    🎂🤪✨
                                 </p>
                             </h2>
 
@@ -276,7 +278,7 @@
                         .appendChild(i.cloneNode(true));
                     clearInterval(timeDatetxt);
                 }
-            }, 100);
+            }, 450);
         }, 12000);
 
         var intervalContent;
@@ -358,14 +360,19 @@
             boxmail.classList.remove("active");
         });
         function playMusic() {
+            const startBtn = document.getElementById("startBtn");
+            const modal = document.getElementById("modal");
+            const animation = document.getElementById("wrapper");
             const music = document.getElementById("bg-music");
-            music.volume = 0.3;
+            music.volume = 0.1;
             // music.muted = false;
             music.play().catch(() => {
                 console.log(
                     "Autoplay blocked 😅 — music will start after user interacts."
                 );
             });
+            modal.style.display = "none";
+            animation.style.display = "block";
         }
     </script>
 </html>

@@ -251,7 +251,7 @@ body {
     opacity: 0;
     visibility: hidden;
     width: 0px;
-    animation: dateOfBirth 3s 9s forwards;
+    animation: dateOfBirth 2s 9s forwards;
 }
 @keyframes dateOfBirth {
     20%,
